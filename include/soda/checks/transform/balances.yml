@@ -1,0 +1,9 @@
+checks for balances:
+  - schema:
+      fail:
+        when required column missing: [address, balance]
+        when wrong column type:
+          address: string
+          balance: numeric
+  - duplicate_count(address) = 0:
+      name: All address are unique

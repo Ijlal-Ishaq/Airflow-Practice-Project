@@ -1,0 +1,25 @@
+checks for transfer_logs:
+  - schema:
+      fail:
+        when required column missing:
+          [
+            log_index,
+            transaction_hash,
+            transaction_index,
+            address,
+            data,
+            topics,
+            block_timestamp,
+            block_number,
+            block_hash,
+          ]
+        when wrong column type:
+          log_index: integer
+          transaction_hash: string
+          transaction_index: integer
+          address: string
+          data: string
+          topics: ARRAY<STRING>
+          block_timestamp: timestamp
+          block_number: integer
+          block_hash: string

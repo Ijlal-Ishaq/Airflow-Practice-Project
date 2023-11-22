@@ -1,4 +1,4 @@
-from airflow.decorators import dag
+from airflow.decorators import dag, task
 from airflow.models.baseoperator import chain
 from airflow.operators.empty import EmptyOperator
 
@@ -30,9 +30,19 @@ def token_holders():
         )
     )
 
+    @task.external_python(python='/usr/local/airflow/soda_venv/bin/python')
+    def check_transform(scan_name='check_transform', checks_subpath='transform'):
+        from include.soda.check_function import check
+
+        return check(scan_name, checks_subpath)
+    
+    _check_transform = check_transform()
+    
+
     chain(
         begin,
         transform,
+        _check_transform,
         end,
     )
 
