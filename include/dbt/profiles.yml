@@ -1,0 +1,12 @@
+token_holders:
+  target: dev
+  outputs:
+    dev:
+      type: bigquery
+      method: service-account
+      keyfile: /usr/local/airflow/include/gcp/service_account.json
+      project: airflow-practice-spock-dev
+      dataset: token_holders
+      threads: 1
+      timeout_seconds: 300
+      location: US

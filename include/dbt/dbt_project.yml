@@ -1,0 +1,7 @@
+name: "token_holders"
+
+profile: "token_holders"
+
+models:
+  token_holders:
+    materialized: table
