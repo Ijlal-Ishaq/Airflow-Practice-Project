@@ -1,6 +1,6 @@
 WITH decoded_token_transfers AS (
   SELECT
-    `airflow-practice-spock-dev.token_holders.decode_token_transfer`(data, topics) AS decoded_data
+    `spock-main.token_holders.decode_token_transfer`(data, topics) AS decoded_data
   FROM {{ ref('transfer_logs') }} 
 )
 

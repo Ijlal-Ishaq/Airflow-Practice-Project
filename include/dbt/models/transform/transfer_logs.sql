@@ -1,7 +1,7 @@
 SELECT 
     * 
 FROM 
-    {{ source('token_holders', 'raw_logs') }}
+    {{ source('token_holders', 'logs') }}
 WHERE 
     address = '0x37c997b35c619c21323f3518b9357914e8b99525'
 AND

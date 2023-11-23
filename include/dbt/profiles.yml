@@ -5,7 +5,7 @@ token_holders:
       type: bigquery
       method: service-account
       keyfile: /usr/local/airflow/include/gcp/service_account.json
-      project: airflow-practice-spock-dev
+      project: spock-main
       dataset: token_holders
       threads: 1
       timeout_seconds: 300

@@ -19,7 +19,7 @@ checks for transfer_logs:
           transaction_index: integer
           address: string
           data: string
-          topics: ARRAY<STRING>
+          topics: array<string>
           block_timestamp: timestamp
           block_number: integer
           block_hash: string

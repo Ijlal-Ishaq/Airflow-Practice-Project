@@ -2,7 +2,7 @@ version: 2
 
 sources:
   - name: token_holders
-    database: airflow-practice-spock-dev
+    database: spock-main
 
     tables:
-      - name: raw_logs
+      - name: logs
